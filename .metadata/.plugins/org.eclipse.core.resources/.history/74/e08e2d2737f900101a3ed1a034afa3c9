@@ -1,0 +1,29 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class SeleniumDay1 {
+	
+public static void main(String[] args) {
+	System.setProperty("webdriver.chrome.driver", "E:\\Selenium\\chromedriver-win64\\chromedriver.exe");
+	WebDriver driver=new ChromeDriver();
+	driver.get("http://fb.com");
+	driver.manage().window().maximize();
+	driver.findElement(By.id("email")).sendKeys("abhishek@gmail.com");
+    driver.findElement(By.name("pass")).sendKeys("password");
+    System.out.println(driver.getCurrentUrl());
+    driver.findElement(By.name("login")).click();
+    
+    driver.findElement(By.xpath("//*[@id=\"login_link\"]/div/a")).click();
+    driver.findElement(By.cssSelector("#initiate_interstitial > div.uiInterstitialBar.uiBoxGray.topborder > div > div.rfloat._ohf > button")).click();
+    driver.findElement(By.cssSelector("/html/body/div[1]/div[1]/div[1]/div/div[2]/form/div/div[3]/div/div[1]/a")).click();
+    //driver.findElement(By.linkText("Forgotten password?")).click();
+	System.out.println(driver.getTitle());
+	System.out.println(driver.getCurrentUrl());
+	
+	
+	
+}
+
+}
